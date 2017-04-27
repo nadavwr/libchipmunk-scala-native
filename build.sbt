@@ -16,15 +16,15 @@ lazy val `libchipmunk-scala-native` = project
   .settings(
     commonSettings,
     resolvers += Resolver.bintrayRepo("nadavwr", "maven"),
-    libraryDependencies += "com.github.nadavwr" %%% "libffi-scala-native" % "0.3.1",
-    libraryDependencies += "com.github.nadavwr" %%% "makeshift" % "0.1.0"
+    libraryDependencies += "com.github.nadavwr" %%% "libffi-scala-native" % "0.3.1"
   )
 
 lazy val sample = project
   .enablePlugins(ScalaNativePlugin)
   .settings(
     commonSettings,
-    unpublished
+    unpublished,
+    libraryDependencies += "com.github.nadavwr" %%% "makeshift" % "0.1.0"
   )
   .dependsOn(`libchipmunk-scala-native`)
 
